@@ -1,0 +1,1 @@
+clone 32 3 48 38 3 59 ~-7 ~ ~2 masked force
