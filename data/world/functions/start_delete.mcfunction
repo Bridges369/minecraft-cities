@@ -1,22 +1,11 @@
 # clear current road
-execute as @e[tag=delete] at @s run function delete:road
+execute as @e[tag=delete] at @s run function delete:current
+execute as @e[tag=delete] at @s run function delete:around
 
-#> FIX ROADS AROUND
-# EAST
-execute as @e[tag=delete] at @s unless block ~16 ~ ~ air run function structure:external/road_empity/e
-execute as @e[tag=delete] at @s unless block ~16 ~ ~ air run function structure:external/pavement/e
-
-# SOUTH
-execute as @e[tag=delete] at @s unless block ~ ~ ~16 air run function structure:external/road_empity/s
-execute as @e[tag=delete] at @s unless block ~ ~ ~16 air run function structure:external/pavement/s
-
-# WEST 
-execute as @e[tag=delete] at @s unless block ~-16 ~ ~ air run function structure:external/road_empity/w
-execute as @e[tag=delete] at @s unless block ~-16 ~ ~ air run function structure:external/pavement/w
-
-# NORTH
-execute as @e[tag=delete] at @s unless block ~ ~ ~-16 air run function structure:external/road_empity/n
-execute as @e[tag=delete] at @s unless block ~ ~ ~-16 air run function structure:external/pavement/n
+# fix roads around
+scoreboard players set #i Replace 1
+execute as @e[tag=delete] at @s run function world:replace_around
+scoreboard players set #i Replace 0
 
 # FINALIZE THE PROCESS
 kill @e[tag=delete]
