@@ -2,10 +2,7 @@
 execute as @e[tag=road] at @s run function structure:road_full
 
 # CONNECT TO AROUND STRUCTURES
-execute as @e[tag=road] at @s run function connect_from:road/east
-execute as @e[tag=road] at @s run function connect_from:road/south
-execute as @e[tag=road] at @s run function connect_from:road/west
-execute as @e[tag=road] at @s run function connect_from:road/north
+execute as @e[tag=road] at @s run function connect_from:road
 
 # FINALIZE THE PROCESS
 kill @e[tag=road]
